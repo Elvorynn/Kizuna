@@ -49,14 +49,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="TextWrapping"      Value="Wrap"/>
         </Style>
-        <Style x:Key="RowToggle" TargetType="Controls:ToggleSwitch">
-            <Setter Property="OnLabel"             Value=""/>
-            <Setter Property="OffLabel"            Value=""/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment"   Value="Center"/>
-            <Setter Property="Margin"              Value="12,0,0,0"/>
-        </Style>
-        <Style x:Key="RowCombo" TargetType="ComboBox">
+        <Style x:Key="RowCombo" TargetType="ComboBox" BasedOn="{StaticResource MetroComboBox}">
             <Setter Property="Width"               Value="190"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="Margin"              Value="12,0,0,0"/>
@@ -182,28 +175,28 @@
                         <Grid>
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
                             <TextBlock Text="Minimize to system tray instead of closing" Style="{StaticResource RowText}"/>
-                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkMinimizeToTray" Style="{StaticResource RowToggle}"/>
+                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkMinimizeToTray" OnLabel="" OffLabel="" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="12,0,0,0"/>
                         </Grid>
                         <Border Style="{StaticResource Divider}"/>
 
                         <Grid>
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
                             <TextBlock Text="Start with Windows" Style="{StaticResource RowText}"/>
-                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkStartWithWindows" Style="{StaticResource RowToggle}"/>
+                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkStartWithWindows" OnLabel="" OffLabel="" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="12,0,0,0"/>
                         </Grid>
                         <Border Style="{StaticResource Divider}"/>
 
                         <Grid>
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
                             <TextBlock Text="Show desktop notifications (download started / complete / error)" Style="{StaticResource RowText}"/>
-                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkNotifications" Style="{StaticResource RowToggle}"/>
+                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkNotifications" OnLabel="" OffLabel="" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="12,0,0,0"/>
                         </Grid>
                         <Border Style="{StaticResource Divider}"/>
 
                         <Grid>
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
                             <TextBlock Text="Auto-retry failed downloads (max 3)" Style="{StaticResource RowText}"/>
-                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkAutoRetry" Style="{StaticResource RowToggle}"/>
+                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkAutoRetry" OnLabel="" OffLabel="" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="12,0,0,0"/>
                         </Grid>
                         <Border Style="{StaticResource Divider}"/>
 
@@ -229,7 +222,7 @@
                         <Grid ToolTip="When off, cached results are shown instantly and only new files are resolved.">
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
                             <TextBlock Text="Re-resolve cached library results against the API on each scan" Style="{StaticResource RowText}"/>
-                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkReResolveLibrary" Style="{StaticResource RowToggle}"/>
+                            <Controls:ToggleSwitch Grid.Column="1" x:Name="ChkReResolveLibrary" OnLabel="" OffLabel="" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="12,0,0,0"/>
                         </Grid>
                     </StackPanel>
                 </Border>
