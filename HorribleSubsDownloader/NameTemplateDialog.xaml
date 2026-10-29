@@ -1,0 +1,48 @@
+<Controls:MetroWindow x:Class="Kizuna.NameTemplateDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Set Filename Template"
+        Height="210" Width="520"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowMinButton="False" ShowMaxRestoreButton="False">
+
+    <Grid Margin="22,14,22,18">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>  <!-- hint -->
+            <RowDefinition Height="12"/>    <!-- gap  -->
+            <RowDefinition Height="Auto"/>  <!-- textbox -->
+            <RowDefinition Height="8"/>     <!-- gap  -->
+            <RowDefinition Height="Auto"/>  <!-- preview -->
+            <RowDefinition Height="*"/>     <!-- spacer -->
+            <RowDefinition Height="Auto"/>  <!-- buttons -->
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="%e" Foreground="#9CDCFE" FontFamily="Consolas" FontSize="11" Margin="0,0,4,0"/>
+            <TextBlock Text="= episode number" Foreground="#666" FontSize="11" Margin="0,0,14,0"/>
+            <TextBlock Text="%t" Foreground="#9CDCFE" FontFamily="Consolas" FontSize="11" Margin="0,0,4,0"/>
+            <TextBlock Text="= type (OVA / ONA / …)" Foreground="#666" FontSize="11"/>
+        </StackPanel>
+
+        <TextBox Grid.Row="2" x:Name="TxtTemplate"
+                 FontFamily="Consolas" FontSize="13"
+                 TextChanged="TxtTemplate_TextChanged"/>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <TextBlock Text="Preview: " Foreground="#555" FontSize="11"/>
+            <TextBlock x:Name="TxtPreview" Foreground="#9CDCFE" FontSize="11"
+                       TextWrapping="Wrap" MaxWidth="370"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Cancel" Width="96" Margin="0,0,8,0"
+                    IsCancel="True" Click="BtnCancel_Click"
+                    Style="{DynamicResource SquareButtonStyle}"/>
+            <Button Content="OK" Width="96"
+                    IsDefault="True" Click="BtnOk_Click"
+                    Style="{DynamicResource AccentedSquareButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>
